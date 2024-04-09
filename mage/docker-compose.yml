@@ -12,6 +12,7 @@ services:
       USER_CODE_PATH: /home/src/${PROJECT_NAME}
       PROJECT_ID: ${PROJECT_ID}
       BUCKET_NAME: ${BUCKET_NAME}
+      POLYGON_API_KEY: ${POLYGON_API_KEY}
     ports:
       - 6789:6789
     volumes:
