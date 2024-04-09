@@ -1,0 +1,8 @@
+beautifulsoup4
+requests
+chardet
+selenium
+dlt
+pandas
+numpy
+webdriver-manager
