@@ -1,0 +1,6 @@
+# misc ide and macos directories to be ignored
+.idea
+.DS_Store
+
+# env files
+.env
