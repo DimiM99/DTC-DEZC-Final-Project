@@ -6,3 +6,4 @@ dlt
 pandas
 numpy
 webdriver-manager
+zstandard
