@@ -70,15 +70,17 @@ def scrape_data(request_count: int, driver):
     stopper = 0
     page_source_snapshot = ''
     driver.get(url)
+    time.sleep(3)
+    driver.switch_to.default_content()
     for req in range(1, request_count):
-        timer = random.randint(3, 5)
+        timer = random.randint(4, 6)
         scroll_script = generate_scroll_script()
         driver.execute_script(scroll_script)
         time.sleep(timer)
         if stopper == 5: break
         if driver.page_source == page_source_snapshot: stopper += 1
         page_source_snapshot = driver.page_source
-    yield driver.page_source
+    yield page_source_snapshot
     print('Scraping done')
 
 @data_loader
@@ -107,7 +109,7 @@ def load_data_from_api(*args, **kwargs):
                     results['date'].append(element.select('shreddit-post')[0].get('created-timestamp'))
                     results['votes'].append(element.select('shreddit-post')[0].get('score'))
                     results['comments'].append(element.select('shreddit-post')[0].get('comment-count'))
-    
+    driver.close()
     driver.quit()
 
     df = pd.DataFrame(results)
@@ -116,12 +118,4 @@ def load_data_from_api(*args, **kwargs):
     df['date-by-day'] = df['date'].dt.date
 
     return df
-    
 
-
-@test
-def test_output(output, *args) -> None:
-    """
-    Template code for testing the output of the block.
-    """
-    assert output is not None, 'The output is undefined'

@@ -82,12 +82,12 @@ def scrape_data(request_count: int):
 def save_results(results):
     # save the results
     outname = 'reddit_data.csv'
-    outdir = './output'
+    outdir = './data/output/'
     if not os.path.exists(outdir):
         os.mkdir(outdir)
     fullname = os.path.join(outdir, outname)
     print(f'Saving results to {fullname}')
-    pd.DataFrame(results).to_csv('./output/reddit_data.csv')
+    pd.DataFrame(results).to_csv(fullname)
 
 
 # set up the service and driver

@@ -6,7 +6,7 @@ docker build . -t reddit_data_fetcher
 ```
 and run it, sometimes it fails for no reason, just run it again 
 ```bash
-docker run -d -v $PWD/../../data/:/usr/src/app/output/ reddit_data_fetcher
+docker run -d -v $PWD/../../data/:/usr/src/app/data/ reddit_data_fetcher
 ```
 
 after execution the container will spit out the output into\

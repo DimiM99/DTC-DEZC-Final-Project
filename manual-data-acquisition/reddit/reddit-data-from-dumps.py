@@ -7,8 +7,8 @@ from datetime import datetime
 import logging.handlers
 
 
-input_file_path = "./output/CryptoCurrency_submissions.zst"
-output_file_path = "./output/CryptoCurrency_submissions.csv"
+input_file_path = "./data/source/CryptoCurrency_submissions.zst"
+output_file_path = "./data/output/CryptoCurrency_submissions.csv"
 fields = ["author","title","score","created","link","text","url"]
 
 log = logging.getLogger("bot")
