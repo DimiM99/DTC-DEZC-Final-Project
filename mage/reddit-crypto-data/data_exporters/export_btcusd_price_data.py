@@ -18,7 +18,7 @@ root_path = f'{bucket_name}/{table_name}'
 
 @data_exporter
 def export_data_to_google_cloud_storage(df: DataFrame, **kwargs) -> None:
-
+    df.to_csv('/home/src/data/output/BTCUSD-price-data.csv', index=False)
     pa_table = pa.Table.from_pandas(df)
     gcs_fs = pa.fs.GcsFileSystem()
 
