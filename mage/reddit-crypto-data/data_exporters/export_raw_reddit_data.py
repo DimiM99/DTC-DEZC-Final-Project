@@ -24,6 +24,6 @@ def export_data_to_google_cloud_storage(df: DataFrame, **kwargs) -> None:
     pq.write_to_dataset(
         table=pa_table,
         root_path=root_path,
-        partition_cols=['date-by-day'],
+        partition_cols=['MM_DD'],
         filesystem=gcs_fs
     )
