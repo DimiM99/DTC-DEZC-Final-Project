@@ -180,3 +180,7 @@ scratch*
 /mage_data*
 *secrets*.json
 *.json
+
+# copy of the data
+CryptoCurrency_submissions.csv
+CryptoCurrency_submissions.zst

@@ -17,6 +17,7 @@ services:
       - 6789:6789
     volumes:
       - .:/home/src/
+      - ../data/CryptoCurrency_submissions.zst:/home/src/CryptoCurrency_submissions.zst
       # specify the path to your GCP credentials file
       - ~/.config/gcp/my-creds.json:/home/src/personal-gcp.json
     restart: on-failure
